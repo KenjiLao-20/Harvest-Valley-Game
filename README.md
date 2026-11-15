@@ -61,7 +61,7 @@ If you want to open this project in the Godot Engine and look at the code:
 1. Download and install **[Godot Engine (v4.x)](https://godotengine.org/download)**. *(Standard version, no C# needed)*.
 2. Clone this repository to your computer:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_HARVEST_VALLEY_REPO.git
+   git clone https://github.com/KenjiLao-20/Harvest-Valley-Game.git
    ```
 3. Open the **Godot Project Manager**.
 4. Click the **Import** button.
