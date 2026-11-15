@@ -1,7 +1,7 @@
 <h1 align="center">🌾 Harvest Valley Game</h1>
 
 <p align="center">
-  <b>A 2D RPG farming and management game made with Godot 4.</b>
+  <b>A 2D RPG farming game made with Godot 4.</b>
 </p>
 
 <div align="center">
