@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bb2kpqfprieua"]
+
+[ext_resource type="Script" uid="uid://cmq7hc0bthd2x" path="res://Scripts/carrot_seedpack.gd" id="1_7b5yh"]
+[ext_resource type="Texture2D" uid="uid://cgvm3o6vvqt6h" path="res://art/Map/Colored_2_Latest.png" id="2_1oy6f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj6ul"]
+atlas = ExtResource("2_1oy6f")
+region = Rect2(192, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwf7y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj6ul")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6cdxk"]
+radius = 5.0
+
+[node name="carrot_seedpack" type="Area2D" unique_id=285843704]
+script = ExtResource("1_7b5yh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=50587572]
+sprite_frames = SubResource("SpriteFrames_pwf7y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1874409297]
+shape = SubResource("CircleShape2D_6cdxk")

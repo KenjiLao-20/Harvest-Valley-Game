@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://15iowwjvhf7i"]
+
+[ext_resource type="Script" uid="uid://djot45fkmghhu" path="res://Scripts/shop_stall.gd" id="1_hn56d"]
+[ext_resource type="Texture2D" uid="uid://cgvm3o6vvqt6h" path="res://art/Map/Colored_2_Latest.png" id="2_psqcg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwf7y"]
+size = Vector2(27, 24.25)
+
+[node name="ShopStall" type="Area2D" unique_id=1941603324]
+script = ExtResource("1_hn56d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=541159468]
+texture = ExtResource("2_psqcg")
+region_enabled = true
+region_rect = Rect2(0.3374176, 15.91824, 15.161646, 16.053509)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1674659700]
+position = Vector2(0, 21.875)
+shape = SubResource("RectangleShape2D_pwf7y")

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b2ujtdijvcda6"]
+
+[ext_resource type="Script" uid="uid://bmuedwc72ua83" path="res://Scripts/sellzone.gd" id="1_2j3m4"]
+[ext_resource type="Texture2D" uid="uid://bhvutve4nm6rm" path="res://art/Map/farmingTilesheetComplete.png" id="2_163uk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6cdxk"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xonyq"]
+atlas = ExtResource("2_163uk")
+region = Rect2(64, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwf7y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xonyq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="sellzone" type="StaticBody2D" unique_id=1559333475]
+script = ExtResource("1_2j3m4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1737102626]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1630226746]
+shape = SubResource("CircleShape2D_6cdxk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1865427649]
+sprite_frames = SubResource("SpriteFrames_pwf7y")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

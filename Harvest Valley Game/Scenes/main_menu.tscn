@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://ca7hiel4wwc3"]
+
+[ext_resource type="Texture2D" uid="uid://c50230t42ibs3" path="res://art/UI/background.png" id="1_28flt"]
+[ext_resource type="Script" uid="uid://dphy2s0r2q86i" path="res://Scripts/main_menu.gd" id="1_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://cmrsl5al5lkwp" path="res://art/UI/play.png" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://bseaggj8it1k8" path="res://art/UI/exit.png" id="3_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://2wxfwimo4vnm" path="res://art/UI/title.png" id="3_n45e2"]
+[ext_resource type="AudioStream" uid="uid://c3fplh6axcf0r" path="res://Audio/startingmenu_music.mp3" id="6_opfnp"]
+
+[node name="MainMenu" type="Control" unique_id=191107281]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ce3w2")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1025486516]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 432.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_28flt")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=279226078]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 105.0
+offset_top = 130.0
+offset_right = 305.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -8
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer" unique_id=1016596849]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+texture_normal = ExtResource("2_1ehe0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer" unique_id=81129064]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+texture_normal = ExtResource("3_ce3w2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Title" type="TextureRect" parent="." unique_id=1798185053]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 0
+offset_left = 95.0
+offset_top = -2.0
+offset_right = 363.33334
+offset_bottom = 159.0
+texture = ExtResource("3_n45e2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=442185000]
+stream = ExtResource("6_opfnp")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

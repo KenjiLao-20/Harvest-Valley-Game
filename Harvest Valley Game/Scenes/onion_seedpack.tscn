@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dv42i2i2knhs5"]
+
+[ext_resource type="Script" uid="uid://dk2mbpxyw2wxe" path="res://Scripts/onion_seedpack.gd" id="1_twyxg"]
+[ext_resource type="Texture2D" uid="uid://cgvm3o6vvqt6h" path="res://art/Map/Colored_2_Latest.png" id="2_0uqge"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3pqm"]
+atlas = ExtResource("2_0uqge")
+region = Rect2(144, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hua6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3pqm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_208hk"]
+radius = 5.0
+
+[node name="onion_seedpack" type="Area2D" unique_id=1907959751]
+script = ExtResource("1_twyxg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=507756026]
+sprite_frames = SubResource("SpriteFrames_7hua6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1452260690]
+shape = SubResource("CircleShape2D_208hk")
